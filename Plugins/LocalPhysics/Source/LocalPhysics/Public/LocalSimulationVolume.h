@@ -118,7 +118,7 @@ public:
 	float DebugTick = 1.f;
 
 	// Define constraints to be used with `RemoveConstraintFromStaticMeshes`
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Local Simulation")
+	UPROPERTY(EditAnywhere)
 	TArray<FConstraintInstance> ConstraintProfiles;
 protected:
 
@@ -151,7 +151,7 @@ private:
 	void UpdateMeshVisuals();
 
 	// Use to simulate along with PhysScene
-	void Update(FPhysScene* PhysScene, uint32 SceneType, float DeltaTime);
+	void Update(FPhysScene* PhysScene, float DeltaTime);
 
 	// Used to update Kinematic actors within Local Simulation
 	void TransformUpdated(USceneComponent* InRootComponent, EUpdateTransformFlags UpdateTransformFlags, ETeleportType Teleport) const;
@@ -165,7 +165,7 @@ public:
 	bool IsInSimulation(UStaticMeshComponent* Mesh) const;
 
 	// Break constraints associated with these mesh.
-	UFUNCTION(BlueprintCallable, Category = "Local Simulation")
+	UFUNCTION()
 	FConstraintInstance GetConstraintProfile(int Index) const;
 
 	// Add mesh to this space.

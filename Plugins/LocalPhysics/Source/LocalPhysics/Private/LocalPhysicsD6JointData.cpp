@@ -1,6 +1,7 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
-#include "LocalPhysicsActor.h"
 #include "LocalPhysicsD6JointData.h"
+#include "LocalPhysicsActor.h"
+
 
 /****** 
  ************ :(

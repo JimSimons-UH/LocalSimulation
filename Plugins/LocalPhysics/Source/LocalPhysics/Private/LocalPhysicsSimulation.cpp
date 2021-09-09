@@ -1,7 +1,7 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 // Peter L. Newton - https://twitter.com/peterlnewton
-#include "LocalPhysicsActor.h"
 #include "LocalPhysicsSimulation.h"
+#include "LocalPhysicsActor.h"
 #include "LocalPhysicsActorHandle.h"
 #include "LocalPhysicsJointHandle.h"
 #include "LocalPhysicsContactPointRecorder.h"

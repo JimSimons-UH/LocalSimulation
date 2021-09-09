@@ -264,8 +264,8 @@ public:
 
 	friend FLocalSimulation;
 	FActorHandle(FLocalSimulation& InOwningSimulation, int32 InActorDataIndex)
-		: ActorToBody(FTransform::Identity)
-		, OwningSimulation(InOwningSimulation)
+		: OwningSimulation(InOwningSimulation)
+		, ActorToBody(FTransform::Identity)
 		, ActorDataIndex(InActorDataIndex)
 	{
 	}

@@ -1,6 +1,6 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
-#include "LocalPhysicsActor.h"
 #include "LocalPhysicsContactPointRecorder.h"
+#include "LocalPhysicsActor.h"
 #include "LocalPhysicsContactPair.h"
 #include "LocalPhysicsSimulation.h"
 

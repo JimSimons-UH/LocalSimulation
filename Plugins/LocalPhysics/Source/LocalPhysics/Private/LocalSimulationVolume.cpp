@@ -433,8 +433,9 @@ bool ALocalSimulationVolume::AddStaticMeshToSimulation(UStaticMeshComponent* Mes
 		switch (typeOfAdd)
 		{
 			case ELocalPhysicsBodyType::Kinematic:
-				{
-					auto kinematicBody = BodyInstance.GetPhysicsActorHandle().SyncActor;
+				{ 
+					auto kinematicBody = FPhysicsInterface_PhysX::GetPxRigidBody_AssumesLocked(BodyInstance.GetPhysicsActorHandle());
+					
 					if (kinematicBody == nullptr)
 					{
 						return false;
@@ -449,7 +450,8 @@ bool ALocalSimulationVolume::AddStaticMeshToSimulation(UStaticMeshComponent* Mes
 				break;
 			case ELocalPhysicsBodyType::Static:
 				{
-					auto staticBody = BodyInstance.GetPxRigidBody_AssumesLocked();
+					auto staticBody = FPhysicsInterface_PhysX::GetPxRigidBody_AssumesLocked(BodyInstance.GetPhysicsActorHandle());
+
 					if (staticBody == nullptr)
 					{
 						return false;
@@ -462,7 +464,8 @@ bool ALocalSimulationVolume::AddStaticMeshToSimulation(UStaticMeshComponent* Mes
 				break;
 			case ELocalPhysicsBodyType::Dynamic:
 				{
-					auto dynamicBody = BodyInstance.GetPxRigidDynamic_AssumesLocked();
+					auto dynamicBody = FPhysicsInterface_PhysX::GetPxRigidDynamic_AssumesLocked(BodyInstance.GetPhysicsActorHandle());
+
 					if (dynamicBody == nullptr)
 					{
 						return false;
